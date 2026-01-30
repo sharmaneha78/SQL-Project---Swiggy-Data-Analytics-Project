@@ -1,4 +1,5 @@
---data validatiom and cleaming--null check
+--data validatiom and cleaming
+--null check
 SELECT
 SUM(CASE WHEN State IS NULL THEN 1 ELSE 0 END) AS null_state,
 SUM(CASE WHEN City IS NULL THEN 1 ELSE 0 END) AS null_city,
@@ -13,16 +14,19 @@ SUM(CASE WHEN Price_INR IS NULL THEN 1 ELSE 0 END) AS null_price,
 SUM(CASE WHEN Rating IS NULL THEN 1 ELSE 0 END) AS null_rating,
 SUM(CASE WHEN Rating_Count IS NULL THEN 1 ELSE 0 END) AS 
 null_rating_count
-FROM swiggy_data;--blank or empty string
+FROM swiggy_data;
+--blank or empty string
 SELECT * FROM swiggy_data WHERE 
 State='' OR City=''  OR Restaurant_Name='' OR Location='' OR Category='' 
-OR Dish_Name=''--duplicate detection
+OR Dish_Name=''
+  --duplicate detection
 SELECT State,City,Order_Date,Restaurant_Name,Location,Category,
 Dish_Name,Price_INR,Rating,Rating_Count,count(*) as CNT
 FROM swiggy_data
 GROUP BY 
 State,City,Order_Date,Restaurant_Name,Location,Category,
-Dish_Name,Price_INR,Rating,Rating_Count HAVING COUNT(*)>1--DELETE DUPLICATION
+Dish_Name,Price_INR,Rating,Rating_Count HAVING COUNT(*)>1
+  --DELETE DUPLICATION
 WITH CTE AS(
 SELECT *,
 ROW_NUMBER() OVER(
