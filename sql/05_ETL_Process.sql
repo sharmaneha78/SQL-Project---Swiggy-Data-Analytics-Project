@@ -1,4 +1,5 @@
---INSERT DATA IN TABLES--dim_date
+--INSERT DATA IN TABLES
+--dim_date
 INSERT INTO dim_date 
 (Full_Date, Year, Month, Month_Name, Quarter, Day, Week)
 SELECT DISTINCT
@@ -17,11 +18,13 @@ SELECT DISTINCT
 State,
 City,
 Location
-FROM swiggy_data;--dim_restaurant
+FROM swiggy_data;
+--dim_restaurant
 INSERT INTO dim_restaurant (Restaurant_Name)
 SELECT DISTINCT
 Restaurant_Name
-FROM swiggy_data;--dim_category
+FROM swiggy_data;
+--dim_category
 INSERT INTO dim_category (Category)
 SELECT DISTINCT
 Category
@@ -30,7 +33,8 @@ FROM swiggy_data;
 INSERT INTO dim_dish (Dish_Name)
 SELECT DISTINCT
 Dish_Name
-FROM swiggy_data;--fact_table
+FROM swiggy_data;
+--fact_table
 INSERT INTO fact_swiggy_orders
 (
 date_id,
