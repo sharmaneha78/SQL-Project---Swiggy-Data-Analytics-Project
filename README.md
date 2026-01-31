@@ -139,6 +139,13 @@ These KPIs help measure **overall platform performance**.
 * Understood customer satisfaction through rating distribution
 
 ---
+## 📸 Sample Analysis Outputs
+
+### Total Orders
+![Total Orders](screenshots/kpi_total_orders.png)
+
+### Monthly Order Trend
+![Monthly Trend](screenshots/monthly_order_trend.png)
 
 ## 🚀 Why This Project is Strong
 
